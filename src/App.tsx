@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef, RefObject } from 'react';
+import Topbar from './components/Topbar';
+import Home from './components/Home';
+import About from './components/About';
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
+
 
 function App() {
+
+  const aboutSectionRef =  useRef<HTMLDivElement>(null);
+  const contactSectionRef = useRef(null); 
+  const blogSectionRef = useRef(null);
+
+  const scrollToSection = (ref : RefObject<HTMLElement> ) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+    <Topbar
+     aboutSectionRef={aboutSectionRef}
+     contactSectionRef={contactSectionRef}
+     blogSectionRef = {blogSectionRef}
+     scrollToSection={scrollToSection}
+    />
+    <Home />
+    <About aboutSectionRef={aboutSectionRef}/>
+    <ContactSection contactSectionRef={contactSectionRef} />
+    <Footer blogSectionRef={blogSectionRef} />
+   </>
   );
 }
 
