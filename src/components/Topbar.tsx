@@ -21,7 +21,7 @@ const Topbar: React.FC<NavigationProps>  = (
   const [isOpen, setOpen] = useState<boolean>(false)
 
   return (
-    <Flex justifyContent={{base:'space-between',sm:"space-around"}} padding={5} gap={{base:"10px"}} alignItems="center" bg='#000000'>
+    <Flex justifyContent={{base:'space-between',sm:"space-around"}} padding={5} gap={{base:"10rem"}} alignItems="center" bg='#000000'>
         <Flex>
             <Text
              color='#FFFFFF'

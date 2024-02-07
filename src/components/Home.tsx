@@ -45,7 +45,7 @@ const Home = () => {
             <Button bg="#FFFF00" _hover={{bg:'#FFFF00'}} rightIcon={<img src="/svgs/leftarrow.svg" alt="Github Icon" />} >
                 Get started 
             </Button>
-            <Button colorScheme='teal' variant='outline' color="#FFFF00" rightIcon={<img src="/svgs/github.svg" alt="Github Icon" />}>set repo</Button>
+            <Button colorScheme='teal' _hover={{bg:'inherit'}} variant='outline' color="#FFFF00" rightIcon={<img src="/svgs/github.svg" alt="Github Icon" />}>set repo</Button>
         </Box>
         <Flex w="100%" mt={{base:'10rem',md:'12rem',lg:"20rem"}} gap="20px" justifyContent="center" alignItems="center" flexDir="column" >
             <Text color="#FFFFFF" fontSize="16px" fontWeight={700}>
